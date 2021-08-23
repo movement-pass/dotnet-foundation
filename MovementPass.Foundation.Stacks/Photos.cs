@@ -59,7 +59,7 @@ namespace MovementPass.Foundation.Stacks
                 "AccessIdentity",
                 new OriginAccessIdentityProps
                 {
-                    Comment = $"{this.App}-photo-identity"
+                    Comment = $"{this.App}-photos-identity"
                 });
 
             var distribution = new CloudFrontWebDistribution(
