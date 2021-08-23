@@ -55,6 +55,14 @@
             });
 
             configure?.Invoke(table);
+
+            this.PutParameterStoreValue(
+                $"dynamodbTables/{name}",
+                table.TableName);
+
+            this.PutParameterStoreValue(
+                $"dynamodbTables/{name}StreamArn",
+                table.TableStreamArn);
         }
     }
 }
