@@ -24,7 +24,7 @@ csharp_new_line_before_members_in_anonymous_types = false
 #require members of object intializers to be on separate lines
 csharp_new_line_before_members_in_object_initializers = true
 #require braces to be on a new line for methods, lambdas, object_collection_array_initializers, control_blocks, and types (also known as "Allman" style)
-csharp_new_line_before_open_brace = methods, lambdas, object_collection_array_initializers, control_blocks, types
+csharp_new_line_before_open_brace = methods, lambdas, control_blocks, types
 
 #Formatting - organize using options
 
@@ -138,3 +138,15 @@ dotnet_style_qualification_for_property = true:suggestion
 
 # CA1014: Mark assemblies with CLSCompliantAttribute
 dotnet_diagnostic.CA1014.severity = none
+
+# CA1308: Normalize strings to uppercase
+dotnet_diagnostic.CA1308.severity = none
+
+# CA1711: Identifiers should not have incorrect suffix
+dotnet_diagnostic.CA1711.severity = none
+  
+# CA1724: Type names should not match namespaces
+dotnet_diagnostic.CA1724.severity = none
+
+# CA1806: Do not ignore method results
+dotnet_diagnostic.CA1806.severity = none

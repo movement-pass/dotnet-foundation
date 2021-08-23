@@ -1,6 +1,7 @@
 namespace MovementPass.Foundation.Stacks
 {
     using System;
+    using System.Globalization;
 
     using Amazon.CDK;
     using Amazon.CDK.AWS.CertificateManager;
@@ -18,7 +19,9 @@ namespace MovementPass.Foundation.Stacks
         {
             var subDomain = $"photos.{this.Domain}";
             var expiration = TimeSpan.Parse(
-                this.GetContextValue<string>("photoUploadExpiration"));
+                this.GetContextValue<string>(
+                    "photoUploadExpiration"),
+                CultureInfo.InvariantCulture);
 
             var bucket = new Bucket(
                 this,
