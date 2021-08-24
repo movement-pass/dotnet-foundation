@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 awsProfile="movement-pass"
 app="movement-pass"
