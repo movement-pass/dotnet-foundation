@@ -1,4 +1,6 @@
-﻿awsProfile="movement-pass"
+#!/bin/sh
+
+awsProfile="movement-pass"
 app="movement-pass"
 version="v1"
 
