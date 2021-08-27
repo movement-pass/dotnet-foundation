@@ -31,7 +31,8 @@ namespace MovementPass.Foundation.Stacks
                 "Bucket",
                 new BucketProps
                 {
-                    BucketName = subDomain,
+                    // ReSharper disable once VirtualMemberCallInConstructor
+                    BucketName = $"{bucketNamePrefix}.{this.Region}.{this.Domain}",
                     BlockPublicAccess = BlockPublicAccess.BLOCK_ALL,
                     RemovalPolicy = RemovalPolicy.RETAIN,
                     Cors = new ICorsRule[]
@@ -46,7 +47,10 @@ namespace MovementPass.Foundation.Stacks
                     }
                 });
 
-            this.PutParameterStoreValue("photoBucket/name", subDomain);
+            this.PutParameterStoreValue(
+                "photoBucket/name",
+                bucket.BucketName);
+
             this.PutParameterStoreValue(
                 "photoBucket/uploadExpiration",
                 expiration.ToString());
@@ -65,7 +69,7 @@ namespace MovementPass.Foundation.Stacks
                 "AccessIdentity",
                 new OriginAccessIdentityProps
                 {
-                    Comment = $"{this.App}-photos-identity"
+                    Comment = $"{this.App}-{subDomain}-identity"
                 });
 
             var distribution = new CloudFrontWebDistribution(
