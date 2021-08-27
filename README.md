@@ -23,7 +23,7 @@ cd ./MovementPass.Foundation.Stacks
 poweshell
 .\deploy.ps1
 ```
-6. If you are in MacOS or Linux:
+6. If you are in macOS or Linux:
 ```
 chmod +x ./deploy.sh
 ./deploy
