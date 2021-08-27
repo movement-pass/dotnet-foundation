@@ -28,4 +28,4 @@ poweshell
 chmod +x ./deploy.sh
 ./deploy
 ```
-Note: Running it your own AWS account would fail unless you change the domain name in `./MovementPass.Foundation.Stacks/cdk.json`.
+**Note**: Running it your own AWS account would fail unless you change the domain name in `./MovementPass.Foundation.Stacks/cdk.json`.
