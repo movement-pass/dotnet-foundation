@@ -19,7 +19,12 @@
             using var rng = new RNGCryptoServiceProvider();
             rng.GetBytes(random);
 
-            var secret = Convert.ToBase64String(random);
+            var secret = BitConverter.ToString(random)
+                .Replace(
+                    "-",
+                    string.Empty,
+                    StringComparison.Ordinal)
+                .ToLowerInvariant();
 
             this.PutParameterStoreValue("jwt/secret", secret);
         }
