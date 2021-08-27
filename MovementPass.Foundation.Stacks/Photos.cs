@@ -17,7 +17,10 @@ namespace MovementPass.Foundation.Stacks
             string id,
             IStackProps props = null) : base(scope, id, props)
         {
-            var subDomain = $"photos.{this.Domain}";
+            var bucketNamePrefix =
+                this.GetContextValue<string>("photoBucketNamePrefix");
+
+            var subDomain = $"{bucketNamePrefix}.{this.Domain}";
             var expiration = TimeSpan.Parse(
                 this.GetContextValue<string>(
                     "photoUploadExpiration"),
