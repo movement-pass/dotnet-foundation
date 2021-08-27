@@ -1,14 +1,31 @@
-# Welcome to your CDK C# project!
+# dotnet-foundation
 
-This is a blank project for C# development with CDK.
+(For more information, [click here](https://github.com/movement-pass/movement-pass.github.io/foundation.md))
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+In order run:
 
-It uses the [.NET Core CLI](https://docs.microsoft.com/dotnet/articles/core/) to compile and execute your project.
+1. Create an aws profile  in your local machine named `movement-pass`.
 
-## Useful commands
-
-* `dotnet build src` compile this app
-* `cdk deploy`       deploy this stack to your default AWS account/region
-* `cdk diff`         compare deployed stack with current state
-* `cdk synth`        emits the synthesized CloudFormation template
+2. Make sure you have AWS CDK installed globally, if not, open your terminal and run:
+```shell
+npm install -g aws-cdk
+```
+3. Assuming your terminal is open and you are in the root of this repository, run the following command to restore the packages:
+```shell
+dotnet restore
+```
+4. Now, change the directory:
+```shell
+cd ./MovementPass.Foundation.Stacks
+```
+5. If you are in Windows, then run:
+```
+poweshell
+.\deploy.ps1
+```
+6. If you are in MacOS or Linux:
+```
+chmod +x ./deploy.sh
+./deploy
+```
+Note: Running it your own AWS account would fail unless you change the domain name in `./MovementPass.Foundation.Stacks/cdk.json`.
