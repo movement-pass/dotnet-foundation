@@ -16,7 +16,7 @@
                 this.GetContextValue<string>("jwtExpire"));
 
             var random = new byte[64];
-            using var rng = new RNGCryptoServiceProvider();
+            using var rng = RandomNumberGenerator.Create();
             rng.GetBytes(random);
 
             var secret = BitConverter.ToString(random)
