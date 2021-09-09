@@ -28,6 +28,14 @@
                             PartitionKey = CreateAttribute("applicantId"),
                             SortKey = CreateAttribute("endAt")
                         });
+
+                    table.AddGlobalSecondaryIndex(
+                        new GlobalSecondaryIndexProps
+                        {
+                            IndexName = "ix_applicantId-status",
+                            PartitionKey = CreateAttribute("applicantId"),
+                            SortKey = CreateAttribute("status")
+                        });
                 });
         }
 
