@@ -1,17 +1,16 @@
-﻿namespace MovementPass.Foundation.Stacks
-{
-    using Amazon.CDK;
+﻿namespace MovementPass.Foundation.Stacks;
 
-    public class Configuration : BaseStack
+using Amazon.CDK;
+
+public class Configuration : BaseStack
+{
+    public Configuration(
+        Construct scope,
+        string id,
+        IStackProps props = null) : base(scope, id, props)
     {
-        public Configuration(
-            Construct scope,
-            string id,
-            IStackProps props = null) : base(scope, id, props)
-        {
-            this.PutParameterStoreValue("app", this.App);
-            this.PutParameterStoreValue("version", this.Version);
-            this.PutParameterStoreValue("domain", this.Domain);
-        }
+        this.PutParameterStoreValue("app", this.App);
+        this.PutParameterStoreValue("version", this.Version);
+        this.PutParameterStoreValue("domain", this.Domain);
     }
 }
