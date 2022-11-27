@@ -2,6 +2,7 @@
 
 using System;
 
+using Constructs;
 using Amazon.CDK;
 using Amazon.CDK.AWS.DynamoDB;
 
