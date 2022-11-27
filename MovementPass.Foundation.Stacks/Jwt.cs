@@ -1,5 +1,6 @@
 ﻿namespace MovementPass.Foundation.Stacks;
 
+using Constructs;
 using System;
 using System.Security.Cryptography;
 
