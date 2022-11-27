@@ -1,5 +1,6 @@
 ﻿namespace MovementPass.Foundation.Stacks;
 
+using Constructs;
 using Amazon.CDK;
 using Amazon.CDK.AWS.SQS;
 
