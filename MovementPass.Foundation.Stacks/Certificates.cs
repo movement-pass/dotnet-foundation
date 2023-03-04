@@ -17,7 +17,7 @@ public class Certificates : BaseStack
             "Zone",
             new HostedZoneProviderProps { DomainName = this.Domain });
 
-        var clientCertificate = new DnsValidatedCertificate(
+        var clientCertificate = new Certificate(
             this,
             "ClientCertificate",
             new DnsValidatedCertificateProps
@@ -41,7 +41,7 @@ public class Certificates : BaseStack
         }
         else
         {
-            var serverCertificate = new DnsValidatedCertificate(
+            var serverCertificate = new Certificate(
                 this,
                 "ServerCertificate",
                 new DnsValidatedCertificateProps
